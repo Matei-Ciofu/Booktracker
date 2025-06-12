@@ -1,0 +1,3 @@
+# === Test/Tool files ===
+*.http
+rest/
