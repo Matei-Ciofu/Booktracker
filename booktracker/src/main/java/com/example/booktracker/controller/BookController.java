@@ -15,6 +15,10 @@ public class BookController {
     public BookController(BookService service) {
         this.service = service;
     }
+    @RequestMapping ("/")
+    public String index(){
+        return "index.html";
+    }
 
     @GetMapping
     public List<Book> getAllBooks() {
