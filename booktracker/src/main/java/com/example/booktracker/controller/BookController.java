@@ -40,4 +40,9 @@ public class BookController {
     public void deleteBook(@PathVariable Long id) {
         service.delete(id);
     }
+    @GetMapping("/test")
+    public String test(@RequestParam(value = "name", defaultValue = "Ciofu") String name){
+        
+        return "ciao a tutti mi chiamo: "+ name;
+    }
 }
