@@ -1,9 +1,6 @@
 package com.example.booktracker.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Book {
@@ -17,6 +14,14 @@ public class Book {
     private String status; // LETTO / DA LEGGERE
     private Integer rating;
     private String notes;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User owner;
+
+    public User getOwner() { return owner; }
+    public void setOwner(User owner) { this.owner = owner; }
+
 
     public String getTitle() {
         return this.title;
